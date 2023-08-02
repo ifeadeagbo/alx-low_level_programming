@@ -1,11 +1,17 @@
 #include "main.h"
 
-void _puts_recursion (char *s){
-
-	if (*p == '\0'){
-		_putchar("\n");
-		return;
+void _puts_recursion(char *s)
+{
+	if (*s != '\0'){
+		_putchar(*s);
+		recursive_puts(s + 1);
 	}
-	_putchar(*p);
-	_puts_recursion(p + 1);
+}
+
+int main()
+{
+	char str[] = "Print recursion";
+	recursive_puts(str);
+	_putchar('\n');
+	return 0;
 }
