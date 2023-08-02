@@ -7,11 +7,3 @@ void _puts_recursion(char *s)
 		_puts_recursion(s + 1);
 	}
 }
-
-int main()
-{
-	char str[] = "Print recursion";
-	_puts_recursion(str);
-	_putchar('\n');
-	return 0;
-}
