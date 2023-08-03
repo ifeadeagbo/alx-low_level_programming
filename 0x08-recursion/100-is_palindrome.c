@@ -2,9 +2,9 @@
 
 int compare_char(char *p, int a, int j)
 {
-	if (*(p + a) != *(s + j - 1))
+	if (*(p + a) != *(p + j - 1))
 		return (0);
-	if else (a >= j)
+	else if (a >= j)
 		return (1);
 	else
 		return (compare_char(p, a + 1, j - 1);
