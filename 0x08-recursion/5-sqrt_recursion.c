@@ -6,7 +6,7 @@ int main_sqrt_recursion(int i, int j)
 	{
 		return (-1);
 	}
-	else if ( j * j == i)
+	else if (j * j == i)
 	{
 		return (j);
 	}
