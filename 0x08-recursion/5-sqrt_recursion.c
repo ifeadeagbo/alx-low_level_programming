@@ -12,7 +12,7 @@ int main_sqrt_recursion(int i, int j)
 	}
 	else
 	{
-		return (main_squrt_recursion(i, j + 1));
+		return (main_sqrt_recursion(i, j + 1));
 	}
 }
 int _sqrt_recursion(int n)
