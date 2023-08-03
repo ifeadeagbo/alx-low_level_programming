@@ -7,7 +7,7 @@ int compare_char(char *p, int a, int j)
 	else if (a >= j)
 		return (1);
 	else
-		return (compare_char(p, a + 1, j - 1);
+		return (compare_char(p, a + 1, j - 1));
 }
 
 int _strlen_recursion(char *s)
