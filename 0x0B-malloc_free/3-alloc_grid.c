@@ -1,41 +1,37 @@
 #include "main.h"
 #include <stdlib.h>
 
-int **alloc_grid(int width, int height) {
-    int **gridout;
-    int i, j;
+int **alloc_grid(int width, int height)
+{
+	int **grid;
+	int x; 
+	int y;
 
-    // Check for invalid dimensions
-    if (width < 1 || height < 1) {
-        return NULL;
-    }
+	if (width < 1 || height < 1)
+		return (NULL);
 
-    // Allocate memory for rows
-    gridout = (int **)malloc(height * sizeof(int *));
-    if (gridout == NULL) {
-        free(gridout);
-        return NULL;
-    }
+	grid = malloc(height * sizeof(int *));
+	if (grid == NULL)
+	{
+		free(grid);
+		return (NULL);
+	}
 
-    // Allocate memory for columns in each row
-    for (i = 0; i < height; i++) {
-        gridout[i] = (int *)malloc(width * sizeof(int));
-        if (gridout[i] == NULL) {
-            // If column allocation fails, free previously allocated memory and return NULL
-            for (i--; i >= 0; i--) {
-                free(gridout[i]);
-            }
-            free(gridout);
-            return NULL;
-        }
-    }
+	for (x = 0; x < height; x++)
+	{
+		gridout[x] = malloc(width * sizeof(int));
+		if (gridout[x] == NULL)
+		{
+			for (x--; x >= 0; x--)
+				free(grid[x]);
+			free(grid);
+			return (NULL);
+		}
+	}
 
-    // Initialize all elements to 0
-    for (i = 0; i < height; i++) {
-        for (j = 0; j < width; j++) {
-            gridout[i][j] = 0;
-        }
-    }
+	for (x = 0; x < height; x++)
+		for (y = 0; y < width; y++)
+			gridout[x][y] = 0;
 
-    return gridout;
+	return (grid);
 }
